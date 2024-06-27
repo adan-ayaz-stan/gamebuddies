@@ -26,3 +26,6 @@ frontend/.env.*
 frontend/!.env.example
 
 frontend/pnpm-lock.yaml
+
+# GO AUTH SERVER
+**/*/.env
