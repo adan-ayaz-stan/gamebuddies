@@ -13,8 +13,9 @@ export default defineNuxtConfig({
         },
       },
     ],
-    "@nuxtjs/kinde",
+    // "@nuxtjs/kinde",
     "@vee-validate/nuxt",
+    // "@prisma/nuxt",
   ],
   css: ["@/assets/css/base.css"],
 });

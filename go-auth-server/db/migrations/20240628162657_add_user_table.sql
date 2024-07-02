@@ -9,7 +9,7 @@ CREATE TABLE users (
     instance_id VARCHAR(255) NOT NULL,
     aud VARCHAR(255) NOT NULL,
     role VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
     encrypted_password VARCHAR(255) NOT NULL,
     email_confirmed_at TIMESTAMP,
     confirmation_token VARCHAR(255),

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 definePageMeta({
-  middleware: ['auth-logged-in'],
+  // middleware: ['auth-logged-in'],
+  middleware: ["auth-server"],
 })
 
 import Sidebar from '@/components/Sidebar.vue';

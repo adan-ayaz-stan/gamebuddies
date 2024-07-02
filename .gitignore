@@ -28,4 +28,8 @@ frontend/!.env.example
 frontend/pnpm-lock.yaml
 
 # GO AUTH SERVER
+go-auth-server/go-auth-server.exe
+go-auth-server/go-auth-server.exe~
+
+# GLOBAL
 **/*/.env

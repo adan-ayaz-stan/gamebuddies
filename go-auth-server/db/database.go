@@ -28,6 +28,30 @@ type User struct {
 	BannedUntil        *time.Time
 }
 
+type Sessions struct {
+	ID          int    `gorm:"primaryKey"`
+	UserId      string `gorm:"type:uuid;not null"`
+	NotAfter    *time.Time
+	RefreshedAt *time.Time
+	UserAgent   *string
+	Ip          *string
+	Tag         *string
+	CreatedAt   time.Time `gorm:"autoCreateTime"`
+	UpdatedAt   time.Time `gorm:"autoUpdateTime"`
+}
+
+type RefreshTokens struct {
+	ID         uint      `gorm:"primaryKey"`
+	UserId     string    `gorm:"type:uuid;not null"`
+	InstanceId string    `gorm:"type:varchar(255);default:'000-000-000'"`
+	Token      string    `gorm:"type:varchar(255);"`
+	SessionID  uint      `gorm:"not null"`
+	Revoked    bool      `gorm:"default:false"`
+	Parent     *string   `gorm:"type:varchar(255);"`
+	CreatedAt  time.Time `gorm:"not null;default:now()"`
+	UpdatedAt  time.Time `gorm:"not null;default:now()"`
+}
+
 var DB *gorm.DB
 
 // BeforeCreate will set a UUID rather than numeric ID.
@@ -42,7 +66,6 @@ func InitDB() {
 	if err != nil {
 		panic("Failed to connect to database")
 	}
-
 	DB = db
 }
 

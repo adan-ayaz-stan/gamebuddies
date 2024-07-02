@@ -1,9 +1,12 @@
 package handlers
 
 import (
+	"crypto/sha256"
+	"encoding/hex"
 	"fmt"
 	"gamebuddy/auth/db"
 	"os"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
@@ -16,15 +19,17 @@ type RegisterRequest struct {
 	RedirectUrl       string `json:"redirect_url" validate:"required"`
 }
 
-func ValidateRegisterRequest(ctx *gin.Context) bool {
-	var request RegisterRequest
-	if err := ctx.ShouldBindJSON(&request); err != nil {
-		return false
-	}
-	validate := validator.New()
-	err := validate.Struct(request)
-	return err == nil
-}
+// I have not used this function because request is being used in the function below
+
+// func ValidateRegisterRequest(ctx *gin.Context) bool {
+// 	var request RegisterRequest
+// 	if err := ctx.BindJSON(&request); err != nil {
+// 		return false
+// 	}
+// 	validate := validator.New()
+// 	err := validate.Struct(request)
+// 	return err == nil
+// }
 
 // type MailRequest struct {
 // 	Email            string `validate:"required,email"`
@@ -68,6 +73,15 @@ func RegisterRoute(ctx *gin.Context) {
 		return
 	}
 
+	validate := validator.New()
+	err := validate.Struct(request)
+	if err != nil {
+		ctx.JSON(400, gin.H{
+			"message": "Input Validation Failed",
+		})
+		return
+	}
+
 	// CHECK FOR EXISTING RECORD
 
 	var existingUser db.User
@@ -102,9 +116,15 @@ func RegisterRoute(ctx *gin.Context) {
 	// Send an email to the user with the verfication code
 	// TURNED OFF BECAUSE NO CORPORATE EMAIL SERVER AVAILABLE
 
+	// Generate random hash string for refresh token
+	hash := sha256.Sum256([]byte(fmt.Sprintf("%d", time.Now().UnixNano())))
+	access_token := hex.EncodeToString(hash[:])
+
+	// Generate JWT token
 	// Create authorization token through jwt
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"email": request.Email,
+		"email":        request.Email,
+		"access_token": access_token,
 	})
 
 	jwtSecret := os.Getenv("JWT_SECRET")
@@ -121,7 +141,29 @@ func RegisterRoute(ctx *gin.Context) {
 		return
 	}
 
+	now := time.Now()
+	agent := ctx.Request.UserAgent()
+
+	fmt.Printf("User Object: %+v\n", user)
+
+	session := db.Sessions{
+		UserId:      user.ID,
+		RefreshedAt: &now,
+		UserAgent:   &agent,
+		Ip:          &ctx.Request.RemoteAddr,
+	}
+
+	// Create a session
+	database.Table("sessions").Create(&session)
+
+	database.Table("refresh_tokens").Create(&db.RefreshTokens{
+		UserId:    user.ID,
+		Token:     access_token,
+		SessionID: uint(session.ID),
+		Revoked:   false,
+	})
+
 	// Assign token to cookie
-	ctx.SetCookie("Authorization", signedString, 36000, "/", "", false, true)
-	ctx.Redirect(302, request.RedirectUrl)
+	ctx.SetCookie("gamebuddy-auth", signedString, 36000, "/", "", false, true)
+	ctx.JSON(200, "OK")
 }

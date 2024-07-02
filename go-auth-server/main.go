@@ -37,7 +37,7 @@ func main() {
 		api.POST("/login", handlers.LoginRoute)
 		api.POST("/register", handlers.RegisterRoute)
 		api.POST("/logout", handlers.LogoutRoute)
-		api.POST("/refresh", handlers.RefreshRoute)
+		api.GET("/refresh", handlers.RefreshTokenRoute)
 		api.POST("/verify-email", handlers.VerifyEmailRoute)
 		api.POST("/reset-password", handlers.ResetPasswordRoute)
 	}
