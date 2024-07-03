@@ -13,16 +13,15 @@ import (
 )
 
 func RefreshTokenRoute(ctx *gin.Context) {
-	// when a user logs in, a cookie with the name of 'gamebuddy-auth' is attached to the user's browser
-
-	fmt.Println("Running route: Refresh Token")
+	// when a user logs in, a cookie with the name of 'gamebuddy' is attached to the user's browser
 
 	database := db.GetDB()
 
-	// check for the 'gamebuddy-auth' cookie
-	authCookie, err := ctx.Cookie("gamebuddy-auth")
+	// check for the 'gamebuddy' cookie
+	authCookie, err := ctx.Cookie("gamebuddy")
 
 	if err != nil || authCookie == "" {
+		fmt.Println("no 'gamebuddy' cookie found")
 		ctx.JSON(401, "Unauthorized, Missing Token.")
 		return
 	}
@@ -33,8 +32,9 @@ func RefreshTokenRoute(ctx *gin.Context) {
 	})
 
 	if err != nil {
-		// remove the 'gamebuddy-auth' cookie
-		ctx.SetCookie("gamebuddy-auth", "", -1, "/", "localhost", false, true)
+		// remove the 'gamebuddy' cookie
+		ctx.SetCookie("gamebuddy", "", -1, "/", "localhost", false, true)
+		fmt.Println("invalid token")
 		ctx.JSON(401, "Unauthorized, Invalid Token.")
 		return
 	}
@@ -52,6 +52,7 @@ func RefreshTokenRoute(ctx *gin.Context) {
 	// check if user exists
 	if dbUser.ID == "" {
 		ctx.JSON(401, "Unauthorized, User not found.")
+		fmt.Println("User not found")
 		return
 	}
 
@@ -59,11 +60,13 @@ func RefreshTokenRoute(ctx *gin.Context) {
 	database.Table("refresh_tokens").Find(&dbRefreshToken, "token = ?", refresh_token)
 
 	if dbRefreshToken.Revoked {
+		fmt.Println("Refresh token has been revoked")
 		ctx.JSON(401, "Unauthorized, Refresh token has been revoked.")
 		return
 	}
 
 	if dbRefreshToken.Token != refresh_token {
+		fmt.Println("Invalid refresh token")
 		ctx.JSON(401, "Unauthorized, Invalid refresh token.")
 		return
 	}
@@ -124,7 +127,7 @@ func RefreshTokenRoute(ctx *gin.Context) {
 
 	// we send back the response which will be the user information (email, name) along with the new cookie
 	// Assign token to cookie
-	ctx.SetCookie("gamebuddy-auth", signedString, 36000, "/", "", false, true)
+	ctx.SetCookie("gamebuddy", signedString, 36000, "/", "", false, true)
 	ctx.JSON(200, gin.H{
 		"email": dbUser.Email,
 	})

@@ -164,6 +164,6 @@ func RegisterRoute(ctx *gin.Context) {
 	})
 
 	// Assign token to cookie
-	ctx.SetCookie("gamebuddy-auth", signedString, 36000, "/", "", false, true)
+	ctx.SetCookie("gamebuddy", signedString, 36000, "/", "", false, true)
 	ctx.JSON(200, "OK")
 }
