@@ -1,4 +1,4 @@
-<div class="min-h-screen grid bg-gradient-to-b from-darkRed to-black p-8 h-fit">
+<div class="min-h-screen grid bg-black p-8 h-fit">
 	<div class="h-full w-full mx-auto flex flex-col gap-4 justify-center max-w-7xl">
 		<!-- The Upper Big Section -->
 		<div class="h-full w-full flex flex-col rounded-xl">
@@ -50,7 +50,7 @@
 			<!-- First -->
 			<a
 				href="/"
-				class="group w-full h-full pt-24 relative flex items-end bg-lightRed text-black rounded-xl p-6"
+				class="group w-full h-full pt-24 relative flex items-end shadow-md shadow-glowRed border-2 border-lightRed bg-gradient-to-tr from-black to-darkRed text-white rounded-xl p-6"
 			>
 				<!-- Link Button -->
 				<button
@@ -65,7 +65,7 @@
 			<!-- Second -->
 			<a
 				href="/"
-				class="group w-full h-full pt-24 relative flex items-end bg-lightRed text-black rounded-xl p-6"
+				class="group w-full h-full pt-24 relative flex items-end shadow-md shadow-glowRed border-2 border-lightRed bg-gradient-to-bl from-black to-darkRed text-white rounded-xl p-6"
 			>
 				<!-- Link Button -->
 				<button

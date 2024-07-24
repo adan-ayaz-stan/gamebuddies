@@ -2,9 +2,7 @@
 	import Navbar from '../navbar.svelte';
 </script>
 
-<div
-	class="min-h-screen bg-gradient-to-b from-black to-darkRed flex flex-col justify-evenly items-center"
->
+<div class="min-h-screen bg-black flex flex-col justify-evenly items-center">
 	<Navbar />
 
 	<!-- DEI Hired Div -->
@@ -81,7 +79,7 @@
 
 		<!-- Content -->
 		<span>Find your best people</span>
-		<h1 class="text-8xl tracking-wider uppercase font-bold text-glowRed mt-4">Gamebuddies</h1>
+		<h1 class="text-8xl tracking-wider uppercase font-bold text-lightRed mt-4">Gamebuddies</h1>
 		<h2 class="text-4xl tracking-wider uppercase">{'>> Exclusive Matchmaking <<'}</h2>
 	</div>
 
