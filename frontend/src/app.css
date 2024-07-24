@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Esportia';
+	src: url('/fonts/esportia.ttf');
+}
+
+@font-face {
+	font-family: 'Nippo';
+	src: url('/fonts/nippo.ttf');
+}
+
+:root [data-theme='my-custom-theme'] {
+	font-size: 20px;
+	--theme-font-family-base: 'Nippo', sans-serif;
+	--theme-font-family-heading: 'Esportia', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Esportia', sans-serif !important;
+	letter-spacing: 3px;
+	font-weight: 500;
+}

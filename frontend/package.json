@@ -1,35 +1,44 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxt/ui": "^2.15.2",
-    "@nuxtjs/kinde": "^0.1.10",
-    "@prisma/nuxt": "^0.0.30",
-    "@tresjs/core": "^4.0.2",
-    "@tresjs/nuxt": "^2.1.2",
-    "@vee-validate/nuxt": "^4.12.6",
-    "clsx": "^2.1.1",
-    "nuxt": "^3.11.2",
-    "tailwind-merge": "^2.3.0",
-    "tailwind-scrollbar": "^3.1.0",
-    "tailwindcss": "^3.4.3",
-    "three": "^0.165.0",
-    "typescript": "^5.4.5",
-    "vue": "^3.4.21",
-    "vue-router": "^4.3.0",
-    "yup": "^1.4.0"
-  },
-  "devDependencies": {
-    "@faker-js/faker": "^8.4.1",
-    "@nuxtjs/google-fonts": "^3.2.0",
-    "@types/three": "^0.165.0"
-  }
+	"name": "svelte-frontend-gamebuddy",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"test": "npm run test:integration && npm run test:unit",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "prettier --check . && eslint .",
+		"format": "prettier --write .",
+		"test:integration": "playwright test",
+		"test:unit": "vitest"
+	},
+	"devDependencies": {
+		"@playwright/test": "^1.28.1",
+		"@skeletonlabs/skeleton": "^2.10.2",
+		"@skeletonlabs/tw-plugin": "^0.4.0",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/eslint": "^8.56.7",
+		"@types/node": "^20.14.11",
+		"autoprefixer": "^10.4.19",
+		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.36.0",
+		"globals": "^15.0.0",
+		"postcss": "^8.4.39",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"tailwindcss": "^3.4.6",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"typescript-eslint": "^8.0.0-alpha.20",
+		"vite": "^5.0.3",
+		"vitest": "^1.2.0"
+	},
+	"type": "module"
 }
