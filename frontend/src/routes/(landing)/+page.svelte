@@ -1,4 +1,5 @@
 <script>
+	import Footer from '../../components/landing/footer.svelte';
 	import FifthSection from '../../components/landing/index/fifth-section.svelte';
 	import FirstSection from '../../components/landing/index/first-section.svelte';
 	import FourthSection from '../../components/landing/index/fourth-section.svelte';
@@ -16,4 +17,5 @@
 	<FifthSection />
 	<WaitlistRegisterSection />
 	<TeamSection />
+	<Footer />
 </div>

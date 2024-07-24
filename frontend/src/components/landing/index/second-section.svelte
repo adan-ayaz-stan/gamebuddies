@@ -1,4 +1,4 @@
-<div class="min-h-screen grid bg-black p-8 h-fit">
+<div class="min-h-screen hidden lg:grid bg-black p-8 h-fit">
 	<div class="h-full w-full mx-auto flex flex-col gap-4 justify-center max-w-7xl">
 		<!-- The Upper Big Section -->
 		<div class="h-full w-full flex flex-col rounded-xl">
@@ -15,12 +15,12 @@
 						class="absolute top-0 right-full translate-x-0.5 translate-y-0.5 h-full w-20"
 					/>
 					<!--  -->
-					<button class="btn variant-filled-secondary font-bold uppercase"
+					<a href="/#waitlist-form" class="btn variant-filled-secondary font-bold uppercase"
 						><img
 							src="https://api.iconify.design/hugeicons:target-03.svg"
 							alt="target icon"
 							class="h-6 w-6 mr-2"
-						/> Join The Waitlist</button
+						/> Join The Waitlist</a
 					>
 				</div>
 			</div>
@@ -33,7 +33,7 @@
 				<div class="flex flex-col h-full justify-between p-8">
 					<h2 class="text-black">MATCHMAKING</h2>
 
-					<h1 class="h1 lg:text-6xl text-white uppercase">
+					<h1 class="h1 lg:text-6xl text-white uppercase tracking-normal">
 						Meet with folks <br /> ready to hit <br /> the ground running
 					</h1>
 				</div>
@@ -59,7 +59,7 @@
 					<img src="/svgs/arrow-outward.svg" alt="link icon" class="h-12 w-12" />
 				</button>
 				<!--  -->
-				<h1 class="h1 leading-none"><span class="text-7xl">1850</span> People ready to roll</h1>
+				<h1 class="h1 leading-none tracking-normal">People from your bag of the beans</h1>
 				<!--  -->
 			</a>
 			<!-- Second -->
@@ -74,13 +74,14 @@
 					<img src="/svgs/arrow-outward.svg" alt="link icon" class="h-12 w-12" />
 				</button>
 				<!--  -->
-				<h1 class="h1 leading-none">Rolling features</h1>
+				<h1 class="h1 leading-none tracking-normal">Rolling features</h1>
 				<!--  -->
 			</a>
 			<!-- Third -->
 			<div class="w-full h-full pt-24 flex flex-col items-end bg-white text-black rounded-xl p-6">
-				<h1 class="h1 leading-none">JOIN the buddy network</h1>
-				<button
+				<h1 class="h1 leading-none tracking-normal">JOIN the buddy network</h1>
+				<a
+					href="/#waitlist-form"
 					class="w-full text-xl mt-2 btn bg-black hover:scale-110 transition-all text-white font-bold"
 					><img
 						src="https://api.iconify.design/fa6-solid:yin-yang.svg?color=%23ffffff"
@@ -92,9 +93,26 @@
 						src="https://api.iconify.design/fa6-solid:yin-yang.svg?color=%23ffffff"
 						alt="yin-yang icon"
 						class="h-6 w-6 mr-2"
-					/></button
+					/></a
 				>
 			</div>
 		</div>
+	</div>
+</div>
+<!-- Mobile View -->
+<div class="min-h-screen lg:hidden bg-black flex justify-center py-16">
+	<!-- Content -->
+	<div class="text-center px-8">
+		<img src="/svgs/logo.svg" alt="logo" class="h-20 w-20 inline" />
+		<h1 class="text-4xl tracking-normal">luceforge studio</h1>
+		<h1 class="text-4xl tracking-normal text-lightRed">brings to you</h1>
+		<img src="/svgs/globe.svg" alt="globe" class="w-80 h-80 mx-auto my-6 invert" />
+		<p class="tracking-normal text-lightRed">
+			a place where teams are formed <span class="text-white">instantly</span>
+		</p>
+
+		<p class="mt-6 tracking-normal leading-none text-lightRed">
+			~ where you'll <span class="text-white">never</span> wait for anyone ~
+		</p>
 	</div>
 </div>

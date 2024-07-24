@@ -12,7 +12,7 @@
 	<div class="w-full relative flex flex-col items-center">
 		<!-- Visual Graphics -->
 		<!-- Top Left -->
-		<div class="absolute bottom-full left-0 w-1/4 h-3/4">
+		<div class="absolute hidden xl:block bottom-full left-0 w-1/4 h-3/4">
 			<div
 				style="clip-path: polygon(0 98%, 75% 98%, 100% 0, 100% 5%, 75% 100%, 0 100%);"
 				class="w-full h-full bg-gradient-to-tr from-glowRed to-transparent"
@@ -28,7 +28,7 @@
 		</div>
 
 		<!-- Bottom Right -->
-		<div class="absolute top-full right-0 w-1/4 h-3/4">
+		<div class="absolute hidden xl:block top-full right-0 w-1/4 h-3/4">
 			<div
 				style="clip-path: polygon(0 98%, 75% 98%, 100% 0, 100% 3%, 75% 100%, 0 100%);"
 				class="w-full h-full bg-gradient-to-l from-glowRed to-transparent"
@@ -45,7 +45,7 @@
 
 		<!-- Bottom Left -->
 
-		<div class="absolute top-full left-0 w-1/4 h-3/4">
+		<div class="absolute hidden xl:block top-full left-0 w-1/4 h-3/4">
 			<div
 				style="clip-path: polygon(0 98%, 75% 98%, 100% 0, 100% 3%, 75% 100%, 0 100%);"
 				class="w-full h-full rotate-180 bg-gradient-to-l from-glowRed to-transparent"
@@ -62,7 +62,7 @@
 
 		<!-- Top Right -->
 
-		<div class="absolute bottom-full right-0 w-1/4 h-3/4">
+		<div class="absolute hidden xl:block bottom-full right-0 w-1/4 h-3/4">
 			<div
 				style="clip-path: polygon(100% 100%, 25% 100%, 0 3%, 0 0, 25% 98%, 100% 99%);"
 				class="w-full h-full bg-gradient-to-l from-glowRed to-transparent"
@@ -78,17 +78,24 @@
 		</div>
 
 		<!-- Content -->
+		<img src="/svgs/gamebuddies-logo.svg" alt="gamebuddies logo" class="h-32 w-32 object-contain" />
 		<span>Find your best people</span>
-		<h1 class="text-8xl tracking-wider uppercase font-bold text-lightRed mt-4">Gamebuddies</h1>
-		<h2 class="text-4xl tracking-wider uppercase">{'>> Exclusive Matchmaking <<'}</h2>
+		<h1
+			class="text-5xl sm:text-6xl xl:text-8xl tracking-wider uppercase font-bold text-lightRed mt-4"
+		>
+			Gamebuddies
+		</h1>
+		<h2 class="h2 xl:text-4xl text-center tracking-wider uppercase">
+			{'>> Exclusive Matchmaking <<'}
+		</h2>
 	</div>
 
 	<!-- Waitlist Button -->
-	<button class="btn variant-filled-secondary font-bold mt-8 uppercase"
+	<a href="/#waitlist-form" class="btn variant-filled-secondary font-bold mt-8 uppercase"
 		><img
 			src="https://api.iconify.design/hugeicons:target-03.svg"
 			alt="target icon"
 			class="h-6 w-6 mr-2"
-		/> Join The Waitlist</button
+		/> Join The Waitlist</a
 	>
 </div>

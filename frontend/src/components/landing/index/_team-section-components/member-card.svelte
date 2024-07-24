@@ -73,7 +73,7 @@
 					<a
 						href={githubUrl}
 						style="background-color: {color};"
-						class={`p-3 flex items-center justify-center rounded-md`}
+						class={`btn p-3 flex items-center justify-center rounded-md`}
 					>
 						<img
 							src="https://api.iconify.design/mdi:github-face.svg?color=%23000000"
@@ -87,7 +87,7 @@
 					<a
 						href={linkedinUrl}
 						style="background-color: {color};"
-						class="p-3 flex items-center justify-center rounded-md"
+						class="btn p-3 flex items-center justify-center rounded-md"
 					>
 						<img
 							src="https://api.iconify.design/ion:logo-linkedin.svg?color=%23000000"
@@ -102,7 +102,7 @@
 					<a
 						href={telegramUrl}
 						style="background-color: {color};"
-						class="p-3 flex items-center justify-center rounded-md"
+						class="btn p-3 flex items-center justify-center rounded-md"
 					>
 						<img
 							src="https://api.iconify.design/mingcute:telegram-fill.svg?color=%23000000"

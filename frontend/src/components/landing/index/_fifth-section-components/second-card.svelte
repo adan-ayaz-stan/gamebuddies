@@ -2,7 +2,7 @@
 	class="h-full w-full min-h-screen p-8 lg:p-16 flex flex-col justify-between bg-black border-4 border-lightRed"
 >
 	<h1 class="h1 lg:text-7xl uppercase text-lightRed">2.</h1>
-	<h1 class="h1 lg:text-7xl uppercase text-lightRed w-2/3">
+	<h1 class="h1 lg:text-7xl uppercase text-lightRed w-2/3 tracking-normal">
 		EXPAND YOUR BUDDY NETWORK AS YOU PLAY GAMES OR HANGOUT
 	</h1>
 

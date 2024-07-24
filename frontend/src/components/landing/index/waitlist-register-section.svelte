@@ -1,4 +1,5 @@
 <div
+	id="waitlist-form"
 	class="min-h-screen bg-gradient-to-b from-darkRed to-black from-0% to-50% flex flex-col items-center justify-center gap-4"
 >
 	<!-- Glow Logo -->
@@ -21,7 +22,7 @@
 	</p>
 
 	<!-- Form goes here -->
-	<form method="POST" action="?/waitlist_register">
+	<form method="POST" action="https://formspree.io/f/xwpevakv">
 		<div class="input-group input-group-divider grid-cols-[auto_1fr_auto] my-2">
 			<div class="input-group-shim">
 				<img
@@ -46,6 +47,21 @@
 				autocomplete="off"
 				placeholder="gamebuddies@luceforge.com"
 				required
+			/>
+		</div>
+		<div class="input-group input-group-divider grid-cols-[auto_1fr_auto] my-2">
+			<div class="input-group-shim">
+				<img
+					src="https://api.iconify.design/mingcute:sparkles-fill.svg?color=%23999999"
+					alt="sparkles icon"
+					class="h-6 w-6"
+				/>
+			</div>
+			<input
+				type="text"
+				name="message"
+				autocomplete="off"
+				placeholder="Message / Feature Request"
 			/>
 		</div>
 

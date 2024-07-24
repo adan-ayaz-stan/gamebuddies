@@ -4,7 +4,7 @@
 </script>
 
 <div class="min-h-screen flex flex-col items-center justify-between bg-black py-16">
-	<h1 class="h1 text-lightRed text-center">TIRED OF EXCUSES?</h1>
+	<h1 class="h1 text-lightRed text-center tracking-normal">TIRED OF EXCUSES?</h1>
 
 	<!-- Excuse Cards -->
 	<Marquee speed={50} gap="11%" class="flex items-center justify-evenly">
@@ -16,10 +16,10 @@
 
 	<!-- CTA -->
 	<div class="space-y-3 text-center">
-		<a href="/" class="text-lightRed underline hidden md:block"
-			><h2 class="h2">JOIN THE GAMEBUDDIES PLATFORM!</h2></a
+		<a href="/#waitlist-form" class="text-lightRed underline hidden md:block"
+			><h2 class="h2 tracking-normal">JOIN THE GAMEBUDDIES PLATFORM!</h2></a
 		>
-		<h2 class="h2">GET ON-SPOT MATCHED WITH YOUR BUDDIES AND ROLL ON</h2>
+		<h2 class="h2 tracking-normal">GET ON-SPOT MATCHED WITH YOUR BUDDIES AND ROLL ON</h2>
 
 		<a href="/" class="btn variant-filled-primary font-light uppercase"
 			>More about buds like you <img

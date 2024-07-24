@@ -9,6 +9,6 @@
 	<img src="/graphics/ex-card-{type}.png" alt="Excuse Card" class="h-96 w-96 object-contain" />
 
 	<div class="absolute top-0 left-0 w-full h-full uppercase p-10">
-		<h2 class="h2">{content}</h2>
+		<h2 class="h2 tracking-normal">{content}</h2>
 	</div>
 </div>

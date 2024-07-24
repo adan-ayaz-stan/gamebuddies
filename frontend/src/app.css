@@ -12,6 +12,11 @@
 	src: url('/fonts/nippo.ttf');
 }
 
+html,
+body {
+	scroll-behavior: smooth;
+}
+
 :root [data-theme='my-custom-theme'] {
 	font-size: 20px;
 	--theme-font-family-base: 'Nippo', sans-serif;
