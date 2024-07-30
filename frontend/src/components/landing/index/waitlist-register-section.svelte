@@ -1,3 +1,9 @@
+<script lang="ts">
+	export let form;
+
+	console.log(form);
+</script>
+
 <div
 	id="waitlist-form"
 	class="min-h-screen bg-gradient-to-b from-darkRed to-black from-0% to-50% flex flex-col items-center justify-center gap-4"
@@ -22,7 +28,7 @@
 	</p>
 
 	<!-- Form goes here -->
-	<form method="POST" action="https://formspree.io/f/xwpevakv">
+	<form action="?/register" method="POST">
 		<div class="input-group input-group-divider grid-cols-[auto_1fr_auto] my-2">
 			<div class="input-group-shim">
 				<img

@@ -1,16 +1,22 @@
-import { redirect } from '@sveltejs/kit';
+import { fail, redirect } from '@sveltejs/kit';
 import type { RequestEvent } from './$types.js';
+import { supabase } from '$lib/supabaseClient.js';
 
 /** @type {import('./$types').Actions} */
 export const actions = {
-	waitlist_register: async (event: RequestEvent) => {
+	register: async (event: RequestEvent) => {
 		// TODO register the user
 		const data = await event.request.formData();
 		const name = data.get('name') as string;
 		const email = data.get('email') as string;
+		const message = data.get('message') as string;
 
-		console.log(name, email);
+		const { error } = await supabase.from('waitlist').insert({ name, email, message }).select();
 
-		redirect(303, '/thank-you');
+		if (error) {
+			return fail(500, { error: error.message });
+		}
+
+		return redirect(302, '/thank-you');
 	}
 };
