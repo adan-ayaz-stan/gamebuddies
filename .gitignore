@@ -1,0 +1,16 @@
+# Root-level gitignore — catches anything that slips past the sub-project ones
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
