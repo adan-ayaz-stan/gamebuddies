@@ -47,8 +47,8 @@
 	></div>
 
 	<!--  -->
-	<div class="mx-auto flex max-w-7xl items-center justify-center gap-12">
-		<h1 class="text-[50vh]" style="opacity: {titleOpacity.current}">Hi!</h1>
+	<div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-6 px-6 py-12 text-center lg:flex-row lg:gap-12 lg:text-left">
+		<h1 class="text-[35vw] leading-none lg:text-[50vh]" style="opacity: {titleOpacity.current}">Hi!</h1>
 		<div class="flex max-w-xl flex-col gap-4 text-white">
 			<div style="opacity: {descriptionOpacity.current}">
 				<p>
@@ -61,7 +61,7 @@
 				</p>
 			</div>
 
-			<div style="opacity: {buttonOpacity.current}">
+			<div class="flex lg:block justify-center" style="opacity: {buttonOpacity.current}">
 				<Button variant="outline" class="w-fit" onclick={handleEnterSystem}>Enter the System</Button
 				>
 			</div>
